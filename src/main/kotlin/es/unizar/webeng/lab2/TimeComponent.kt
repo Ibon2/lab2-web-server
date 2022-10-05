@@ -1,8 +1,9 @@
 package es.unizar.webeng.lab2
-import org.springframework.web.bind.annotation.GetMapping
+
 import java.time.LocalDateTime
-import org.springframework.web.bind.annotation.RestController
-import org.springframework.stereotype.Service
+import org.springframework.*
+
+
 
 class TimeDTO(val time: LocalDateTime)
 
