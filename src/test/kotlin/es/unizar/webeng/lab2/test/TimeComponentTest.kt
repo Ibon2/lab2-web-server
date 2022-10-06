@@ -19,7 +19,7 @@ class TimeComponentTest {
     @Autowired
     lateinit var testRestTemplate: TestRestTemplate
     @BeforeAll
-    fun exec(){
+    fun exec() {
         Runtime.getRuntime().exec("./gradlew bootRun")
     }
     @Test
