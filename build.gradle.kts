@@ -28,7 +28,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
+    testImplementation(kotlin("test"))
+    testImplementation("junit:junit:4.13.2")
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
 }
 
