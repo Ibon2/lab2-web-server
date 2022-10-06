@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
-
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TimeComponentTest {
@@ -24,8 +23,9 @@ class TimeComponentTest {
 
         assertNotNull(result)
         assertEquals(result.statusCode, HttpStatus.OK)
-        //assertEquals(LocalDateTime.now().toString(),result.body)
+        // assertEquals(LocalDateTime.now().toString(),result.body)
     }
+
     @Test
     fun testError() {
         System.setProperty("javax.net.ssl.trustStore", "src/test/kotlin/es/unizar/webeng/lab2/test/localhost.p12")
@@ -34,6 +34,6 @@ class TimeComponentTest {
 
         assertNotNull(result)
         assertEquals(result.statusCode, HttpStatus.NOT_FOUND)
-        //assertEquals(LocalDateTime.now().toString(),result.body)
+        // assertEquals(LocalDateTime.now().toString(),result.body)
     }
 }
