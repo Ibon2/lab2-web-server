@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 
 class TimeDTO(val time: LocalDateTime)
-
+    // Comment for revert changes
 interface TimeProvider {
     fun now(): LocalDateTime
 }
