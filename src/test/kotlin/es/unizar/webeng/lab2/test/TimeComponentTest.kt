@@ -1,6 +1,8 @@
 package es.unizar.webeng.lab2.test
 
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -10,11 +12,16 @@ import org.springframework.test.context.junit4.SpringRunner
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TimeComponentTest {
     @Autowired
     lateinit var testRestTemplate: TestRestTemplate
+    @BeforeAll
+    fun exec(){
+        Runtime.getRuntime().exec("./gradlew bootRun")
+    }
     @Test
     fun testTime() {
         System.setProperty("javax.net.ssl.trustStore", "src/test/kotlin/es/unizar/webeng/lab2/test/localhost.p12")
